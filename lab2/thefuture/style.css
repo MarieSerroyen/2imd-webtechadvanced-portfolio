@@ -40,7 +40,18 @@ main article.infinity {
 @media(min-width: 45em) {
     main {
         display: grid;
+        grid-template-rows: repeat(3, 200px);
         grid-template-columns: repeat(5, 200px);
+    }
+
+    main article.broken {
+        grid-column: 3;
+        grid-row: 1/6;
+    }
+
+    main article.infinity {
+        grid-column: 4/6;
+        grid-row: 2;
     }
 
 }
