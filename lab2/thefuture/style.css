@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+main p {
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+}
+
+main p.homework {
+    background-color: #E0284F;
+}
+
+main p.broken {
+    background-color: #78FFF3;
+}
+
+main p.infinity {
+    background-color: #FDFF00;
+}
