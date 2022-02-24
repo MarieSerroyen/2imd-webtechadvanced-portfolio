@@ -3,4 +3,6 @@
 ## The Future:
 https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab2/thefuture
 
+*Codepen Link:* https://codepen.io/marieserroyen/pen/zYPLpLJ
+
 ## Grid ticket:
