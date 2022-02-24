@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
-body {
+.background {
     background-image: url("https://images.pexels.com/photos/1540338/pexels-photo-1540338.jpeg?cs=srgb&dl=pexels-wendy-wei-1540338.jpg&fm=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
 }
