@@ -2,10 +2,48 @@
     box-sizing: border-box;
 }
 
-.background {
+body {
     background-image: url("https://images.pexels.com/photos/1540338/pexels-photo-1540338.jpeg?cs=srgb&dl=pexels-wendy-wei-1540338.jpg&fm=jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
+    backdrop-filter: blur(2px);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    background-color: black;
+    color: white;
+
+}
+
+.title h1 {
+    letter-spacing: 10px;
+    font-size: xx-large;
+}
+
+.title p {
+    word-spacing: 5px;
+}
+
+.details {
+    text-align: center;
+}
+
+.details p {
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    /*background-color: yellow;*/
+}
+
+.QR {
+    margin: 1em 8em;
+}
+
+.included {
+    display: none;
 }
