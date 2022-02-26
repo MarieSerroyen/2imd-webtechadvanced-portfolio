@@ -6,3 +6,6 @@ https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab2/t
 *Codepen Link:* https://codepen.io/marieserroyen/pen/zYPLpLJ
 
 ## Grid ticket:
+https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab2/gridticket
+
+*Codepen link:* https://codepen.io/marieserroyen/pen/XWzPEJr
