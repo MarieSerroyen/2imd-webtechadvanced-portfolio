@@ -3,20 +3,24 @@
 }
 
 body {
-    background-image: url("https://images.pexels.com/photos/1540338/pexels-photo-1540338.jpeg?cs=srgb&dl=pexels-wendy-wei-1540338.jpg&fm=jpg");
+    background-image: url("https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?cs=srgb&dl=pexels-picjumbocom-196652.jpg&fm=jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
+    backdrop-filter: sepia(100%);
     height: 600px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    gap: 6em;
+    margin: 0;
 }
 
 .title {
     text-align: center;
     background-color: black;
     color: white;
+    margin: none;
 
 }
 
@@ -31,17 +35,29 @@ body {
 
 .details {
     text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .details p {
     border-color: black;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
-    /*background-color: yellow;*/
+    flex: 100px 1 0;
+    margin: 0;
+    padding: 5px;
+}
+
+.details p.ticket {
+    flex: 100% 0 0;
+    margin: 0;
 }
 
 .QR {
-    margin: 1em 8em;
+    margin: 0 5em;
 }
 
 .included {
