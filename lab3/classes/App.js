@@ -26,7 +26,7 @@ export default class App {
 
         let todo = new Todo();
         todo.add();
-        //this.reset();
+        this.reset();
       }  
 
 
@@ -50,7 +50,7 @@ export default class App {
   
     reset() {
       // this function should reset the form / clear the text field
-      //document.getElementById('todo-add-item').reset();
+      document.querySelector('#add-item-text').value = "";
     }
   }
   
