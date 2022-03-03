@@ -24,8 +24,11 @@ export default class App {
       if(e.key === "Enter") {
         console.log("📕");
 
-        let todo = new Todo("This is a demo!");
+        let todo = new Todo();
+        todo.add();
+        //this.reset();
       }  
+
 
       console.log(this);
 
@@ -47,6 +50,7 @@ export default class App {
   
     reset() {
       // this function should reset the form / clear the text field
+      //document.getElementById('todo-add-item').reset();
     }
   }
   
