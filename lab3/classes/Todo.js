@@ -56,12 +56,6 @@ export default class Todo {
         this.classList.add("done");
         //console.log("done");
       }
-
-      /*this.addEventListener('click', () => {
-        if(this.className.includes("done")) {
-          console.log("has already been clicked");
-        }
-      })*/
       
     }
   
@@ -76,6 +70,19 @@ export default class Todo {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
+      let todos;
+
+      if(localStorage.getItem("todos") === null) {
+        //if no create one
+        todos = [];
+      }
+      else {
+        //if yes get all the data
+        todos = JSON.parse(localStorage.getItem('todos'));
+      }
+
+      todos.push(this.title);
+      localStorage.setItem('todos', JSON.stringify(todos));
     }
   }
   

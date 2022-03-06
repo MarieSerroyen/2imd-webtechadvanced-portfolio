@@ -26,6 +26,7 @@ export default class App {
         let todoValue = document.querySelector("#add-item-text");
         let todo = new Todo(todoValue.value);
         todo.add();
+        todo.saveToStorage();
         this.reset();
       }  
 
@@ -46,6 +47,9 @@ export default class App {
       // HINT🤩
       // load all items from storage here and add them to the screen
       // use the Todo class to create the elements
+      let todos;
+      
+
     }
   
     reset() {
