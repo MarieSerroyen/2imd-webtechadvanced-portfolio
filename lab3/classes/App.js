@@ -25,7 +25,6 @@ export default class App {
         //console.log("📕");
         let todoValue = document.querySelector("#add-item-text");
         let todo = new Todo(todoValue.value);
-        //let todo = new Todo();
         todo.add();
         this.reset();
       }  
