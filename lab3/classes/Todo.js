@@ -47,10 +47,21 @@ export default class Todo {
       // if the item is clicked, but was already marked as done, remove the item from the list
 
       //console.log("click");
+      //this.classList.add("done");
+      if (this.className.includes("done")) {
+        //console.log("has already been clicked");
+        this.remove();
+      }
+      else {
+        this.classList.add("done");
+        //console.log("done");
+      }
 
-      this.classList.add("done");
-
-
+      /*this.addEventListener('click', () => {
+        if(this.className.includes("done")) {
+          console.log("has already been clicked");
+        }
+      })*/
       
     }
   
