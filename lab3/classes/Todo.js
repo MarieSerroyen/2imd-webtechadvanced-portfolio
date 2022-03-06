@@ -9,8 +9,24 @@ export default class Todo {
 
       let li = document.createElement("li");
       let inputValue = document.querySelector("#add-item-text").value;
+
+      const prior = this.title.indexOf(":");
+      const result = this.title.substring(0, prior);
+      console.log(result);
+
+      switch(result){
+        case "high":
+          li.classList.add("prior-high");
+          break;
+        case "low":
+          li.classList.add("prior-low");
+          break;
+        default:
+          li.classList.add("prior-medium");
+          break;
+      }
+
       li.innerHTML = inputValue;
-      li.classList.add("prior-high");
       return  li;  
       // HINT🤩
       // this method will create the HTML structure with the correct classes, based on the todo priority

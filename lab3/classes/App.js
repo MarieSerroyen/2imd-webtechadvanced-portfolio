@@ -2,16 +2,16 @@ import Todo from "./Todo.js";
 
 export default class App {
     constructor() {
-      console.log("🍕");
+      //console.log("🍕");
       // HINT🤩
       // set up the enter Key
       this.setupEventListeners();
       // when the app loads, we can show previously saved items from localstorage
-      // this.loadFromStorage();
+      this.loadFromStorage();
     }
   
     setupEventListeners() {
-      console.log("👂🏽");
+      //console.log("👂🏽");
       // HINT🤩
       document.querySelector("#add-item-text").addEventListener("keyup", this.createItem.bind(this)); //ik geef de huidige betekenis van this door
       // pressing the enter key in the text field triggers the createItem function
@@ -22,15 +22,16 @@ export default class App {
   
     createItem(e) {
       if(e.key === "Enter") {
-        console.log("📕");
-
-        let todo = new Todo();
+        //console.log("📕");
+        let todoValue = document.querySelector("#add-item-text");
+        let todo = new Todo(todoValue.value);
+        //let todo = new Todo();
         todo.add();
         this.reset();
       }  
 
 
-      console.log(this);
+      //console.log(this);
 
       // HINT🤩
       // this function should create a new todo by using the Todo() class
