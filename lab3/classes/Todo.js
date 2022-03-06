@@ -12,17 +12,21 @@ export default class Todo {
 
       const prior = this.title.indexOf(":");
       const result = this.title.substring(0, prior);
-      console.log(result);
+      //console.log(result);
 
       switch(result){
         case "high":
           li.classList.add("prior-high");
+          inputValue = inputValue.replace("high:", "");
+          //console.log(inputValue);
           break;
         case "low":
           li.classList.add("prior-low");
+          inputValue = inputValue.replace("low:", "");
           break;
         default:
           li.classList.add("prior-medium");
+          inputValue = inputValue.replace("medium:", "");
           break;
       }
 
