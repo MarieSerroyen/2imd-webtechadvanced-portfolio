@@ -29,26 +29,23 @@ export default class App {
         todo.saveToStorage();
         this.reset();
       }  
-
-
-      //console.log(this);
-
-      // HINT🤩
-      // this function should create a new todo by using the Todo() class
-      // new Todo(text)
-      // todo.add();
-      // todo.saveToStorage();
-      // if you used bind() in the previous function, you'll notice that this refers to the current class instance
-      // clear the text field with .reset() after adding the item
-      // if (e.key === "Enter")
     }
   
     loadFromStorage() {
       // HINT🤩
       // load all items from storage here and add them to the screen
       // use the Todo class to create the elements
-      let todos;
+
+      let todos = JSON.parse(localStorage.getItem('todos'));     
+      console.log(todos);
       
+      if(todos !== null) {
+        todos.forEach((title) => {
+          console.log("hello");
+          let todo = new Todo(title);
+          todo.add();
+        });
+      }
 
     }
   

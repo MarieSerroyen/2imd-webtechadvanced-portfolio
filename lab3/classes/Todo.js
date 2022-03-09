@@ -33,12 +33,7 @@ export default class Todo {
       li.innerHTML = inputValue;
       li.addEventListener("click", this.markDone.bind(li));
       return  li;  
-      // HINT🤩
-      // this method will create the HTML structure with the correct classes, based on the todo priority
-      // let newNote = document.createElement("li");
-      // check if the todo item includes a priority like medium: to generate the correct classnames
-      // don't forget to hook up an event listener for the click event
-      // return newNote;
+
     }
   
     markDone(e) {
@@ -51,6 +46,12 @@ export default class Todo {
       if (this.className.includes("done")) {
         //console.log("has already been clicked");
         this.remove();
+        let todos = localStorage.getItem('todos');
+        todos = JSON.parse(todos);
+        let todoElement = this.innerHTML;
+        let index = todos.indexOf(todoElement);
+        todos.splice(index, 1);
+        localStorage.setItem('todos', JSON.stringify(todos));
       }
       else {
         this.classList.add("done");
@@ -70,19 +71,11 @@ export default class Todo {
       // HINT🤩
       // localStorage only supports strings, not arrays
       // if you want to store arrays, look at JSON.parse and JSON.stringify
-      let todos;
 
-      if(localStorage.getItem("todos") === null) {
-        //if no create one
-        todos = [];
-      }
-      else {
-        //if yes get all the data
-        todos = JSON.parse(localStorage.getItem('todos'));
-      }
-
+      let todos = localStorage.getItem("todos");
+      todos = JSON.parse(todos) || [];
       todos.push(this.title);
-      localStorage.setItem('todos', JSON.stringify(todos));
+      localStorage.setItem("todos", JSON.stringify(todos));
     }
   }
   
