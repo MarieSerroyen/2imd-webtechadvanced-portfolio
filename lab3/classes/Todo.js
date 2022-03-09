@@ -8,31 +8,30 @@ export default class Todo {
     createElement() {
 
       let li = document.createElement("li");
-      let inputValue = document.querySelector("#add-item-text").value;
 
-      const prior = this.title.indexOf(":");
-      const result = this.title.substring(0, prior);
+      //const prior = this.title.indexOf(":");
+      const result = this.title.substring(0, this.title.indexOf(":"));
       //console.log(result);
 
       switch(result){
         case "high":
           li.classList.add("prior-high");
-          inputValue = inputValue.replace("high:", "");
+          this.title = this.title.replace("high:", "");
           //console.log(inputValue);
           break;
         case "low":
           li.classList.add("prior-low");
-          inputValue = inputValue.replace("low:", "");
+          this.title = this.title.replace("low:", "");
           break;
         default:
           li.classList.add("prior-medium");
-          inputValue = inputValue.replace("medium:", "");
+          this.title = this.title.replace("medium:", "");
           break;
       }
 
-      li.innerHTML = inputValue;
+      li.innerHTML = this.title;
       li.addEventListener("click", this.markDone.bind(li));
-      return  li;  
+      return  li; 
 
     }
   

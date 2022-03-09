@@ -37,11 +37,11 @@ export default class App {
       // use the Todo class to create the elements
 
       let todos = JSON.parse(localStorage.getItem('todos'));     
-      console.log(todos);
+      //console.log(todos);
       
       if(todos !== null) {
         todos.forEach((title) => {
-          console.log("hello");
+          //console.log("hello");
           let todo = new Todo(title);
           todo.add();
         });
