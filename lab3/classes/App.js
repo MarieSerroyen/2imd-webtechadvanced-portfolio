@@ -40,8 +40,8 @@ export default class App {
         todos.forEach((title) => {
           //console.log("hello");
           let todo = new Todo(`${title['priority']}:${title['title']}`);
-          todo.add();
-        });
+            todo.add();
+          });
       }
 
     }

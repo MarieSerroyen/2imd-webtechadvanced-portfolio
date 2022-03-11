@@ -48,11 +48,16 @@ export default class Todo {
         let index = todos.indexOf(todoElement);
         todos.splice(index, 1);
         localStorage.setItem('todos', JSON.stringify(todos));
+        this.status = "done";
+
       }
       else {
         this.classList.add("done");
         //console.log("done");
+        this.status = "done";
+        console.log(this.status);
       }
+
       
     }
   
