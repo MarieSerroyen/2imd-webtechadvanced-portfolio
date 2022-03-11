@@ -14,17 +14,14 @@ export default class App {
       //console.log("👂🏽");
       // HINT🤩
       document.querySelector("#add-item-text").addEventListener("keyup", this.createItem.bind(this)); //ik geef de huidige betekenis van this door
-      // pressing the enter key in the text field triggers the createItem function
-      // addEventListener("keyup", this.createItem.bind(this));
-      // read up on .bind() -> we need to pass the current meaning of this to the eventListener
-      // while testing, feel free to console.log(this) to see what's in it
+
     }
   
     createItem(e) {
       if(e.key === "Enter") {
         //console.log("📕");
-        let todoValue = document.querySelector("#add-item-text");
-        let todo = new Todo(todoValue.value);
+        let todoValue = document.querySelector("#add-item-text").value;
+        let todo = new Todo(todoValue);
         todo.add();
         todo.saveToStorage();
         this.reset();
@@ -42,7 +39,7 @@ export default class App {
       if(todos !== null) {
         todos.forEach((title) => {
           //console.log("hello");
-          let todo = new Todo(title);
+          let todo = new Todo(`${title['priority']}:${title['title']}`);
           todo.add();
         });
       }
