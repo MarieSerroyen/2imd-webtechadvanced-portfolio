@@ -10,8 +10,12 @@ export default class App {
         navigator.geolocation.getCurrentPosition(this.gettingLocation.bind(this), this.notGettingLocation.bind(this));
     }
 
-    gettingLocation() {
+    gettingLocation(location) {
+        this.lat = location.coords.latitude;
+        this.lng = location.coords.longitude;
+
         console.log(this.lat);
+        console.log(this.lng);
     }
 
     notGettingLocation(err) {
