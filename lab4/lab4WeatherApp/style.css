@@ -1,3 +1,10 @@
+/*body {
+  background-color: red;
+}*/
+
 #ad {
   background-color: red;
+  width: 336px;
+  height: 280px;
+  background-image: url("https://images.pexels.com/photos/1540338/pexels-photo-1540338.jpeg?cs=srgb&dl=pexels-wendy-wei-1540338.jpg&fm=jpg");
 }
