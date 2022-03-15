@@ -6,7 +6,7 @@ export default class App {
     }
 
     getLocation() {
-        console.log("Getting the location");
+        //console.log("Getting the location");
         navigator.geolocation.getCurrentPosition(this.gettingLocation.bind(this), this.notGettingLocation.bind(this));
     }
 
@@ -14,12 +14,17 @@ export default class App {
         this.lat = location.coords.latitude;
         this.lng = location.coords.longitude;
 
-        console.log(this.lat);
-        console.log(this.lng);
+        /*console.log(this.lat);
+        console.log(this.lng);*/
+        this.getWeather();
     }
 
     notGettingLocation(err) {
         console.log(err);
+    }
+
+    getWeather() {
+        console.log("Getting the weather");
     }
 
 }
