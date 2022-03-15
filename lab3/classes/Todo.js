@@ -1,9 +1,10 @@
 export default class Todo {
-    constructor(title, priority) { //zoals first en lastname
+    constructor(title, priority, done) { //zoals first en lastname
       // HINT🤩
       // use a constructor to set basic property values
       this.title = title;
       this.priority = priority;
+      this.done = done;
     }
   
     createElement() {
@@ -29,10 +30,11 @@ export default class Todo {
 
       li.innerHTML = this.title;
       li.addEventListener("click", this.markDone.bind(li));
+
       return  li; 
     }
   
-    markDone(e) {
+    markDone(e, todo) {
       // HINT🤩
       // this function should mark the current todo as done, by adding the correct CSS class
       // if the item is clicked, but was already marked as done, remove the item from the list
@@ -42,21 +44,36 @@ export default class Todo {
       if (this.className.includes("done")) {
         //console.log("has already been clicked");
         this.remove();
+        //document.querySelector("#todo-list").removeChild(this.title);
+        let todos = localStorage.getItem('todos');
+        todos = JSON.parse(todos) || ("todos");
+        let todoElement = this.innerHTML;
+        let index = todos.indexOf(todoElement);
+        todos.splice(index, 1);
+        console.log(todos);
+        localStorage.setItem('todos', JSON.stringify(todos));
+        localStorage.removeItem(this.title);
+        
+      }
+      else {
+        this.classList.add("done");
+        //console.log("done")
+        /*this.done = "done";
+        
         let todos = localStorage.getItem('todos');
         todos = JSON.parse(todos);
         let todoElement = this.innerHTML;
         let index = todos.indexOf(todoElement);
         todos.splice(index, 1);
         localStorage.setItem('todos', JSON.stringify(todos));
-        this.status = "done";
+        
+        let doneTodos = localStorage.getItem("doneTodos");
+        doneTodos = JSON.parse(doneTodos) || [];
+        doneTodos.push({"done":this.done});
+        localStorage.setItem("doneTodos", JSON.stringify(doneTodos));*/
+      }
 
-      }
-      else {
-        this.classList.add("done");
-        //console.log("done");
-        this.status = "done";
-        console.log(this.status);
-      }
+
 
       
     }
@@ -77,6 +94,10 @@ export default class Todo {
       todos = JSON.parse(todos) || [];
       todos.push({"priority":this.priority, "title": this.title});
       localStorage.setItem("todos", JSON.stringify(todos));
+
     }
+    
   }
+
+
   

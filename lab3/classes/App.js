@@ -33,16 +33,29 @@ export default class App {
       // load all items from storage here and add them to the screen
       // use the Todo class to create the elements
 
-      let todos = JSON.parse(localStorage.getItem('todos'));     
-      //console.log(todos);
-      
-      if(todos !== null) {
-        todos.forEach((title) => {
-          //console.log("hello");
-          let todo = new Todo(`${title['priority']}:${title['title']}`);
-            todo.add();
+      let todos = JSON.parse(localStorage.getItem('todos'));    
+      let doneTodos = JSON.parse(localStorage.getItem('doneTodos')); 
+      //console.log(todos);      
+
+        if(todos !== null) {
+            //console.log("hello");
+          todos.forEach((title) => {
+              let todo = new Todo(`${title['priority']}:${title['title']}`);
+              todo.add();
           });
-      }
+        }
+
+        if(doneTodos !== null) {
+          //console.log("hello");
+          doneTodos.forEach((title) => {
+            let todo = new Todo(`${title['title']}`);
+            //todo.classList.add("done");
+            todo.add();
+            //doneTodos.add("done");
+            //doneTodos.classList.add('done');
+          });
+        }
+
 
     }
   
@@ -50,5 +63,6 @@ export default class App {
       // this function should reset the form / clear the text field
       document.querySelector('#add-item-text').value = "";
     }
+
   }
   

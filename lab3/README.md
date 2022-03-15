@@ -6,6 +6,8 @@
 
 ## ES2017 .padEnd() & .padStart():
 
+*Codepen link examples:* https://codepen.io/marieserroyen/pen/dyJbmVN
+
 These methodes pad a string to a certain length with another string. 
 
 *.padEnd()* <br/>
