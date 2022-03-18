@@ -8,9 +8,7 @@ export default class Todo {
     }
   
     createElement() {
-
       let li = document.createElement("li");
-      //let inputValue = document.querySelector("#add-item-text").value;
 
       if(this.title.startsWith("high:")) {
         li.classList.add("prior-high");
@@ -44,39 +42,23 @@ export default class Todo {
       if (this.className.includes("done")) {
         //console.log("has already been clicked");
         this.remove();
-        //document.querySelector("#todo-list").removeChild(this.title);
         let todos = localStorage.getItem('todos');
         todos = JSON.parse(todos) || ("todos");
-        let todoElement = this.innerHTML;
-        console.log(todoElement); //lussen en kijken of hij de exacte title terug vind
-        let index = todos.indexOf(todoElement);
-        todos.splice(index, 1);
-        console.log(index);
-        localStorage.setItem('todos', JSON.stringify(todos));
-        //localStorage.removeItem(this.title);
+        todos.forEach((element, index) => {
+          if(element['title'] === this.innerHTML){
+            //let index = todos.indexOf(todoElement);
+            todos.splice(index, 1);
+            //console.log(index);
+            localStorage.setItem('todos', JSON.stringify(todos));
+          }
+        });
+        //console.log(todoElement); 
         
       }
       else {
         this.classList.add("done");
         //console.log("done")
-        /*this.done = "done";
-        
-        let todos = localStorage.getItem('todos');
-        todos = JSON.parse(todos);
-        let todoElement = this.innerHTML;
-        let index = todos.indexOf(todoElement);
-        todos.splice(index, 1);
-        localStorage.setItem('todos', JSON.stringify(todos));
-        
-        let doneTodos = localStorage.getItem("doneTodos");
-        doneTodos = JSON.parse(doneTodos) || [];
-        doneTodos.push({"done":this.done});
-        localStorage.setItem("doneTodos", JSON.stringify(doneTodos));*/
-      }
-
-
-
-      
+      }     
     }
   
     add() {
