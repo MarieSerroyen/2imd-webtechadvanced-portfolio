@@ -48,11 +48,12 @@ export default class Todo {
         let todos = localStorage.getItem('todos');
         todos = JSON.parse(todos) || ("todos");
         let todoElement = this.innerHTML;
+        console.log(todoElement); //lussen en kijken of hij de exacte title terug vind
         let index = todos.indexOf(todoElement);
         todos.splice(index, 1);
-        console.log(todos);
+        console.log(index);
         localStorage.setItem('todos', JSON.stringify(todos));
-        localStorage.removeItem(this.title);
+        //localStorage.removeItem(this.title);
         
       }
       else {

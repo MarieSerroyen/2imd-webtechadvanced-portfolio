@@ -6,6 +6,7 @@ export default class App {
         this.API_KEY = API_KEY;
     }
 
+    
     getLocation() {
         //console.log("Getting the location");
         navigator.geolocation.getCurrentPosition(this.gettingLocation.bind(this), this.notGettingLocation.bind(this));
@@ -34,6 +35,7 @@ export default class App {
         }).then( (json) => {
             console.log(json);
             this.printWeather(json);
+            //this.getHero();
         }).catch((err) => {
              console.log(err);
         }).finally(() => {
@@ -44,8 +46,31 @@ export default class App {
     printWeather(json) {
         let summary = json.weather[0].description;
         let temp = Math.round(json.main.temp);
+
         document.querySelector("h1").innerHTML = summary;
-        document.querySelector("h2").innerHTML = temp + "°C";
+        document.querySelector("h2").innerHTML = "It's " + temp + "°C outside";
     }
+
+    /*getHero() {
+        //console.log("book");
+        let publicKey = "a26a14abc5a3548ffa3816be17ed0cec";
+        let privateKey = "3bd0b348bd9329dbed0c530d363cbfcfcbf7ad2d";
+        //let ts = timestamp;
+        let hash = md5(privateKey+publicKey);
+        console.log(hash);
+        let heroURL = `https://gateway.marvel.com:443/v1/public/characters?apikey=a26a14abc5a3548ffa3816be17ed0cec`;
+        console.log(heroURL);
+
+        fetch(heroURL).then( (res) => {
+            return res.json(); 
+        }).then( (json) => {
+            console.log(json);
+            this.printWeather(json);
+        }).catch((err) => {
+             console.log(err);
+        }).finally(() => {
+            console.log("finally done");
+        });
+    }*/
 
 }
