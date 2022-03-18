@@ -1,7 +1,5 @@
 export default class Todo {
-    constructor(title, priority, done) { //zoals first en lastname
-      // HINT🤩
-      // use a constructor to set basic property values
+    constructor(title, priority, done) { 
       this.title = title;
       this.priority = priority;
       this.done = done;
@@ -32,21 +30,15 @@ export default class Todo {
       return  li; 
     }
   
-    markDone(e, todo) {
-      // HINT🤩
-      // this function should mark the current todo as done, by adding the correct CSS class
-      // if the item is clicked, but was already marked as done, remove the item from the list
+    markDone(e) {
+      let todos = localStorage.getItem('todos');
+      todos = JSON.parse(todos) || ("todos");
 
-      //console.log("click");
-      //this.classList.add("done");
       if (this.className.includes("done")) {
         //console.log("has already been clicked");
         this.remove();
-        let todos = localStorage.getItem('todos');
-        todos = JSON.parse(todos) || ("todos");
         todos.forEach((element, index) => {
           if(element['title'] === this.innerHTML){
-            //let index = todos.indexOf(todoElement);
             todos.splice(index, 1);
             //console.log(index);
             localStorage.setItem('todos', JSON.stringify(todos));
@@ -58,26 +50,32 @@ export default class Todo {
       else {
         this.classList.add("done");
         //console.log("done")
+        todos.forEach((element, index)=> {
+          if(element['title'] === this.innerHTML) {
+            let todo = todos[index];
+            todo['done']= "done";
+            localStorage.setItem("todos", JSON.stringify(todos));
+          }
+
+        });
       }     
     }
   
-    add() {
-      // HINT🤩
-      // this function should append the note to the screen somehow
-      let todo = this.createElement(); // should return a full <li> with the right classes and innerHTML
+    add(done) {
+      let todo = this.createElement();
+
+      if(done){
+        todo.classList.add("done");
+      }
+
       document.querySelector("#todo-list").appendChild(todo);
     }
   
     saveToStorage() {
-      // HINT🤩
-      // localStorage only supports strings, not arrays
-      // if you want to store arrays, look at JSON.parse and JSON.stringify
-
       let todos = localStorage.getItem("todos");
       todos = JSON.parse(todos) || [];
-      todos.push({"priority":this.priority, "title": this.title});
+      todos.push({"priority":this.priority, "title": this.title, 'done': "todo"});
       localStorage.setItem("todos", JSON.stringify(todos));
-
     }
     
   }
