@@ -47,21 +47,15 @@ export default class App {
         let summary = json.weather[0].description;
         let temp = Math.round(json.main.temp);
 
-        document.querySelector("h1").innerHTML = summary;
-        document.querySelector("h2").innerHTML = "It's " + temp + "°C outside";
+        document.querySelector("h1").innerHTML = "We have a " + summary + " today!";
+        document.querySelector("h3").innerHTML = "It's " + temp + "°C outside";
     }
 
-    /*getHero() {
-        //console.log("book");
-        let publicKey = "a26a14abc5a3548ffa3816be17ed0cec";
-        let privateKey = "3bd0b348bd9329dbed0c530d363cbfcfcbf7ad2d";
-        //let ts = timestamp;
-        let hash = md5(privateKey+publicKey);
-        console.log(hash);
-        let heroURL = `https://gateway.marvel.com:443/v1/public/characters?apikey=a26a14abc5a3548ffa3816be17ed0cec`;
-        console.log(heroURL);
+    getMovie() {
+        let movieURL = ``;
+        console.log(movieURL);
 
-        fetch(heroURL).then( (res) => {
+        fetch(movieURL).then( (res) => {
             return res.json(); 
         }).then( (json) => {
             console.log(json);
@@ -71,6 +65,6 @@ export default class App {
         }).finally(() => {
             console.log("finally done");
         });
-    }*/
+    }
 
 }
