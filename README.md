@@ -14,4 +14,4 @@ https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab3
 
 ## Week 4 - API weather app
 * Lab 4:
-https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab4/lab4WeatherApp
+https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab4
