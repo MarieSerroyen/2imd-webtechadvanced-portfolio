@@ -35,7 +35,7 @@ export default class App {
         }).then( (json) => {
             console.log(json);
             this.printWeather(json);
-            //this.getHero();
+            this.getMovie(json);
         }).catch((err) => {
              console.log(err);
         }).finally(() => {
@@ -52,19 +52,29 @@ export default class App {
     }
 
     getMovie() {
-        let movieURL = ``;
-        console.log(movieURL);
-
-        fetch(movieURL).then( (res) => {
-            return res.json(); 
-        }).then( (json) => {
-            console.log(json);
-            this.printWeather(json);
-        }).catch((err) => {
-             console.log(err);
-        }).finally(() => {
-            console.log("finally done");
+        fetch("https://data-imdb1.p.rapidapi.com/movie/id/tt1228705/", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
+                "x-rapidapi-key": "c2a23ae285mshf40e4858027373ep1f33d4jsn8652430c22ed"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            this.printMovie(data);
+        }).catch(err => {
+            console.error(err);
         });
+    }
+
+    printMovie(data){
+        let title = data.results.title;
+        let cover = data.results.banner;
+        //console.log(cover);
+
+        document.querySelector("p").innerHTML = title;
+        document.querySelector("#cover").src = cover;
     }
 
 }
