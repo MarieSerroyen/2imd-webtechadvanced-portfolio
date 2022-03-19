@@ -11,3 +11,7 @@ https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab2
 ## Week 3 - ES6 
 * Lab 3:
 https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab3
+
+## Week 4 - API weather app
+* Lab 4:
+https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab4/lab4WeatherApp
