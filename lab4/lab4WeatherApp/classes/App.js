@@ -1,9 +1,10 @@
 export default class App {
-    constructor(API_KEY) {
+    constructor(API_KEY, API_KEY2) {
         this.getLocation();
         this.lat = 0;
         this.lng = 0;
         this.API_KEY = API_KEY;
+        this.API_KEY2 = API_KEY2;
         this.movieId = "";
     }
 
@@ -86,7 +87,7 @@ export default class App {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
-                "x-rapidapi-key": "c2a23ae285mshf40e4858027373ep1f33d4jsn8652430c22ed"
+                "x-rapidapi-key": this.API_KEY2
             }
         })
         .then(response => response.json())
