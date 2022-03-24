@@ -15,3 +15,7 @@ https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab3
 ## Week 4 - API weather app
 * Lab 4:
 https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab4
+
+## Week 5 - NodeJS basics
+* Lab 5:
+https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio-lab5
