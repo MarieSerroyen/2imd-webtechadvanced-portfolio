@@ -19,3 +19,7 @@ https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab4
 ## Week 5 - NodeJS basics
 * Lab 5:
 https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio-lab5
+
+## Week 6 - Web sockets
+*Lab 6: 
+https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio-lab6
