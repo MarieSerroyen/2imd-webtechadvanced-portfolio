@@ -21,5 +21,5 @@ https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio/tree/main/lab4
 https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio-lab5
 
 ## Week 6 - Web sockets
-*Lab 6: 
+* Lab 6: 
 https://github.com/MarieSerroyen/2imd-webtechadvanced-portfolio-lab6
